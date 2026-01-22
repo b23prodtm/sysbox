@@ -63,7 +63,7 @@ spec:
         effect: "NoSchedule"
       containers:
       - name: sysbox-deploy-k8s
-        image: docker.io/bprtkop/sysbox-deploy-k8s:sha256:b2c50b4a405d175349b21ecab87f70afc4f612f5b580d36e7ebbfac79195947b
+        image: docker.io/bprtkop/sysbox-deploy-k8s:v0.6.7
         imagePullPolicy: Always
         command: [ "bash", "-c", "/opt/sysbox/scripts/sysbox-deploy-k8s.sh ce install" ]
         env:
