@@ -83,6 +83,10 @@ spec:
               key: SYSBOX_FS_CONFIG
         securityContext:
           privileged: true
+        capabilities:
+          add:
+          - SYS_ADMIN
+          - SYS_RESOURCE
         volumeMounts:
         - name: host-etc
           mountPath: /mnt/host/etc
