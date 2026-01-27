@@ -63,7 +63,7 @@ spec:
         effect: "NoSchedule"
       containers:
       - name: sysbox-deploy-k8s
-        image: registry.nestybox.com/nestybox/sysbox-deploy-k8s:v0.6.7-0
+        image: docker.io/bprtkop/sysbox-deploy-k8s:v0.6.7
         imagePullPolicy: Always
         command: [ "bash", "-c", "/opt/sysbox/scripts/sysbox-deploy-k8s.sh ce install" ]
         env:
@@ -83,6 +83,10 @@ spec:
               key: SYSBOX_FS_CONFIG
         securityContext:
           privileged: true
+          capabilities:
+            add:
+            - SYS_ADMIN
+            - SYS_RESOURCE
         volumeMounts:
         - name: host-etc
           mountPath: /mnt/host/etc
